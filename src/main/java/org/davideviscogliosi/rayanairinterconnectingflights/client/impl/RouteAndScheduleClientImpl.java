@@ -2,15 +2,15 @@ package org.davideviscogliosi.rayanairinterconnectingflights.client.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.davideviscogliosi.rayanairinterconnectingflights.client.RouteAndScheduleClient;
-import org.davideviscogliosi.rayanairinterconnectingflights.entity.Route;
-import org.davideviscogliosi.rayanairinterconnectingflights.entity.ScheduleResponse;
+import org.davideviscogliosi.rayanairinterconnectingflights.model.Route;
+import org.davideviscogliosi.rayanairinterconnectingflights.model.ScheduleResponse;
 import org.davideviscogliosi.rayanairinterconnectingflights.exception.RayanairException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Slf4j
 @Component
@@ -32,7 +32,7 @@ public class RouteAndScheduleClientImpl {
 
     }
 
-    public ScheduleResponse getSchedules(String departure, String arrival, int year, int month) {
+    public Optional<ScheduleResponse> getSchedules(String departure, String arrival, int year, int month) {
 
         try {
             return routeAndScheduleClient.getSchedules(departure, arrival, year, month);

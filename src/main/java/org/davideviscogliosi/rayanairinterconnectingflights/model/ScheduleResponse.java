@@ -1,4 +1,4 @@
-package org.davideviscogliosi.rayanairinterconnectingflights.entity;
+package org.davideviscogliosi.rayanairinterconnectingflights.model;
 
 import lombok.Data;
 

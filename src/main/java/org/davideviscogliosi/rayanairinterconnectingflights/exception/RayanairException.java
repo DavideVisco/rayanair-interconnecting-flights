@@ -1,7 +1,7 @@
 package org.davideviscogliosi.rayanairinterconnectingflights.exception;
 
+import lombok.Data;
 import org.springframework.http.HttpStatus;
-
 
 public class RayanairException extends RuntimeException {
 

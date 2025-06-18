@@ -1,7 +1,7 @@
 package org.davideviscogliosi.rayanairinterconnectingflights.util;
 
 import lombok.extern.slf4j.Slf4j;
-import org.davideviscogliosi.rayanairinterconnectingflights.entity.Route;
+import org.davideviscogliosi.rayanairinterconnectingflights.model.Route;
 import org.davideviscogliosi.rayanairinterconnectingflights.exception.RayanairException;
 import org.springframework.http.HttpStatus;
 
@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
 public class RouteFilteringUtils {
 
 
-    public static List<Route> getFlightsRoutes(List<Route> routesToFilter,String operator){
+    public static List<Route> validateRoute(List<Route> routesToFilter,String operator){
 
         try {
             return routesToFilter.stream()
-                    .filter(route -> "RYANAIR".equals(route.getOperator()) && route.getConnectingAirport() == null)
+                    .filter(route -> operator.equals(route.getOperator()) && route.getConnectingAirport() == null)
                     .collect(Collectors.toList());
 
         } catch (Exception e) {
