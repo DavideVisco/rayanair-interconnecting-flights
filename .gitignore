@@ -1,0 +1,15 @@
+# Maven build output
+target/
+
+*.log
+
+.idea/
+*.iml
+
+.env
+
+*.classpath
+*.project
+.settings/
+
+.mvn/wrapper/maven-wrapper.jar
