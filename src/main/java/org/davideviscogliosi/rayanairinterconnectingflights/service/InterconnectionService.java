@@ -1,7 +1,6 @@
 package org.davideviscogliosi.rayanairinterconnectingflights.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.davideviscogliosi.rayanairinterconnectingflights.client.impl.RouteAndScheduleClientImpl;
 import org.davideviscogliosi.rayanairinterconnectingflights.model.Interconnection;
 import org.davideviscogliosi.rayanairinterconnectingflights.model.Leg;
 import org.davideviscogliosi.rayanairinterconnectingflights.model.Route;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
