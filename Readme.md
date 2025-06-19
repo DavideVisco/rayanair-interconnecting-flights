@@ -1,33 +1,37 @@
 # Ryanair - Task 2 - Java/Spring - Interconnecting Flights
 
-
 ## Tech Stack
 
-Java 24
-Spring boot 3.5.0
-Maven for dependency mgmt
-Spring cloud openfeign for requests to external apis
-JUnit 5 and Mockito for testing
+- Java 24
+- Spring Boot 3.5.0
+- Maven for dependency management
+- Spring Cloud OpenFeign for requests to external APIs
+- JUnit 5 and Mockito for testing
+- 
+---
 
 ## Running
+
+```bash
 mvn clean compile
 mvn test
 mvn clean package
+- java -jar rayanair-interconnecting-flights-0.0.1-SNAPSHOT.jar
+```
 
-java -jar rayanair-interconnecting-flights-0.0.1-SNAPSHOT.jar / mvn spring-boot:run
 
 #### The application will start on http://localhost:8080
 
 ## API Endpoint
 
 #### Get Interconnections
-GET /flight-interconnections/api/interconnections
-parameters ----> departure(not null) String IATA code, 
-                 arrival(not null) String IATA code,
-                 departureDateTime(not null) LocalDateTime ISO format,
-                 arrivalDateTime(not null) LocalDateTime ISO format
+- GET /flight-interconnections/api/interconnections
+- parameters ----> departure(not null) String IATA code   
+                   arrival(not null) String IATA code  
+                 departureDateTime(not null) LocalDateTime ISO format  
+                 arrivalDateTime(not null) LocalDateTime ISO format  
 #### Example Request
-GET http://localhost:8080/api/interconnections?departure=AAR&arrival=ZAD&departureDateTime=2025-06-01T07:00&arrivalDateTime=2025-06-21T21:00
+- GET http://localhost:8080/api/interconnections?departure=AAR&arrival=ZAD&departureDateTime=2025-06-01T07:00&arrivalDateTime=2025-06-21T21:00
 
 #### Example Response
 [

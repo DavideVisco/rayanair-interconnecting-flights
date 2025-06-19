@@ -41,7 +41,7 @@ class InterconnectionControllerTest {
                 ArgumentMatchers.eq("AAR"), ArgumentMatchers.eq("ZAD"), ArgumentMatchers.any(LocalDateTime.class), ArgumentMatchers.any(LocalDateTime.class)))
                 .thenReturn(List.of(interconnection));
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/interconnections")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/interconnections")
                         .param("departure", "AAR")
                         .param("arrival", "ZAD")
                         .param("departureDateTime", "2025-06-01T07:00")
@@ -56,7 +56,7 @@ class InterconnectionControllerTest {
 
     @Test
     void shouldReturn400WhenMissingParameters() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/interconnections")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/interconnections")
                         .param("departure", "ZAD")
                         .param("arrival", "AAR")
                         .param("arrivalDateTime", "2018-03-03T21:00"))
@@ -65,7 +65,7 @@ class InterconnectionControllerTest {
 
     @Test
     void shouldReturn400WhenDepartureDateAfterArrivalDate() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/interconnections")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/interconnections")
                         .param("departure", "ZAD")
                         .param("arrival", "AAR")
                         .param("departureDateTime", "2018-03-03T21:00")
