@@ -27,10 +27,8 @@ public class InterconnectionService {
                                                       LocalDateTime arrivalDateTime) {
         List<Interconnection> interconnections = new ArrayList<>();
 
-        // direct flights
         interconnections.addAll(findDirectFlights(departure, arrival, departureDateTime, arrivalDateTime));
 
-        // 1 stop flights
         interconnections.addAll(findOneStopFlights(departure, arrival, departureDateTime, arrivalDateTime));
 
         return interconnections;

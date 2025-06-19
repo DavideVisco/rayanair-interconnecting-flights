@@ -1,5 +1,6 @@
 package org.davideviscogliosi.rayanairinterconnectingflights.controller;
 
+import org.davideviscogliosi.rayanairinterconnectingflights.exception.RayanairException;
 import org.davideviscogliosi.rayanairinterconnectingflights.model.Interconnection;
 import org.davideviscogliosi.rayanairinterconnectingflights.service.InterconnectionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 @RestController
 public class InterconnectionsController {
 
@@ -51,7 +53,9 @@ public class InterconnectionsController {
             );
 
             return ResponseEntity.ok(interconnections);
-        } catch (Exception e) {
+        } catch (RayanairException r) {
+            return ResponseEntity.status(r.getStatus()).body(new ArrayList<>());
+        }catch (Exception e){
             return ResponseEntity.internalServerError().build();
         }
     }
